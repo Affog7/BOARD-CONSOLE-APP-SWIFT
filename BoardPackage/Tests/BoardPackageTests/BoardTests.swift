@@ -3,11 +3,11 @@ import XCTest
 
 final class BoardTests: XCTestCase {
     
-    func testBoardInit() throws {
-        func expect(initRow row : Int,column col : Int, shoulnotBeNil notNil : Bool, initGrid grid : [[Int?]] ) {
+    func testBoardInitGrid() throws {
+        func expect( shoulnotBeNil notNil : Bool, initGrid grid : [[Int?]] ) {
             
             
-            let board1 = Board( col : col ,row : row)
+            let board1 = Board(withGrid: grid)
             
             
             if !notNil {
@@ -17,17 +17,25 @@ final class BoardTests: XCTestCase {
             
             XCTAssertNotNil(board1)
             
-            XCTAssertEqual(row,board1?.nbreRow)
-            XCTAssertEqual(col,board1?.nbreColumn)
+            XCTAssertEqual(board1?.grid,grid)
+            XCTAssertEqual(board1?.nbreRow,grid.count)
+            XCTAssertEqual(board1?.nbreColumn,grid[0].count)
             
-            XCTAssertNotEqual(row+1, board1?.nbreRow)
-            XCTAssertNotEqual(col+1, board1?.nbreColumn)
         }
         
+        expect(shoulnotBeNil: false,initGrid: [])
+
+        expect(shoulnotBeNil: false,initGrid: [[]])
         
+        expect(shoulnotBeNil: true ,initGrid: [[1]])
+        
+        expect(shoulnotBeNil: true,initGrid: [[2,3],[12,3],[2,0]])
+
     }
+    
+    
  
-    func testBoard() throws {
+    func testBoardInitSimple() throws {
         
         func expect(initRow row : Int,column col : Int, shoulnotBeNil notNil : Bool){
             
