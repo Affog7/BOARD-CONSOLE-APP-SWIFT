@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:TDD.xcodeproj">
+      location = "group:BoardPackage">
+   </FileRef>
+   <FileRef
+      location = "group:ConsoleApp">
    </FileRef>
 </Workspace>
