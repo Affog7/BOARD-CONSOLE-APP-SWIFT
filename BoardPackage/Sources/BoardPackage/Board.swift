@@ -19,11 +19,18 @@ public struct Board : CustomStringConvertible {
    public  init?(withGrid grid : [[Int?]] ) {
        
        let result =  grid.allSatisfy { $0.count == grid[0].count }
- 
        
        guard result
        else {
           
+           return nil
+       }
+       
+       guard grid.count > 0   else {
+           return nil
+       }
+       
+       guard grid[0].count > 0   else {
            return nil
        }
        
