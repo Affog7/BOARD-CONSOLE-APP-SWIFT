@@ -19,23 +19,43 @@ public struct Board : CustomStringConvertible {
    public  init?(withGrid grid : [[Int?]] ) {
        
        let result =  grid.allSatisfy { $0.count == grid[0].count }
-       
-       guard result
+ 
+     /*  let dd = grid.allSatisfy { (param) -> Bool in
+           return
+           param.count == grid[0].count
+       }
+ 
+       var hfyg : (Int,Int) -> Int = {(_ x:Int,_ y:Int)
+in return x+y
+       }*/
+       /**
+        classe et protocole demain
+        */
+        guard result
        else {
           
            return nil
        }
        
        guard grid.count > 0   else {
-           return nil
+            return nil
        }
        
        guard grid[0].count > 0   else {
            return nil
        }
-       
+        
+            
+            guard grid[0].count > 0   else {
+                return nil
+            }
+
+ 
        self.nbreRow = grid.count
-       self.nbreColumn = grid[0].count
+
+         self.nbreColumn = grid[0].count
+       
+       
        
        self.grid = grid
    
@@ -65,12 +85,12 @@ public struct Board : CustomStringConvertible {
         }
         
        // si c'est plein
-        if ( self.grid[row][col] != 0) {
+        if ( self.grid[row][col] != nil) {
             return .Fail(reason: FailRaison.full)
         }
         
         //
-        if ( self.grid[row][col] == 0 ) {
+        if ( self.grid[row][col] == nil ) {
             self.grid[row][col] = id
             return .ok
         }
@@ -81,17 +101,17 @@ public struct Board : CustomStringConvertible {
        }
   
     
-    public mutating  func insertPiecce(col : Int, id : Int )->Bool {
+    public mutating  func insertPiecce(col : Int, id : Int )->BoardResult {
+         
         if(col >=  0 && col < self.nbreColumn){
             for i in 0 ... self.nbreRow-1 {
                 if(self.grid[i][col] == nil){
-                    self.grid[i][col] = id
-                    
-                    return true
+                     let data =  self.insertPiece(col: col, row: i, id: id)
+                     return data
                 }
             }
         }
-        return false
+        return .Fail(reason: .out)
     }
     
     
@@ -116,7 +136,7 @@ public struct Board : CustomStringConvertible {
 }
     
 
-public  enum BoardResult{
+public  enum BoardResult : Equatable{
     case unknown
     case ok
     case  Fail(reason : FailRaison)
