@@ -12,7 +12,7 @@ class Outputer{
     static func printNumber(){
         print("Entrez une valeur(id) entier : \n")
     }
-    
+     
     // Demander à choisir une colonne
     static func printChooseCulomn(){
         print("Choisissez une colonne \n")
