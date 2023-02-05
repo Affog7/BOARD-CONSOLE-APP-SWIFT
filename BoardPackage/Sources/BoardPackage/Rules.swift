@@ -9,6 +9,11 @@ import Foundation
 protocol Rules {
     var nbreRow : Int { get }
     var nbreColumn : Int {get} 
-   mutating func isGameOver() -> Bool 
-  
+    mutating func isGameOver(_ grid: [[Int?]]) -> Bool
+    func createBoard() -> [[Int?]]
+    func getNextPlayer(player: Int) -> Int
+    func isValid(row: Int, column: Int, grid: [[Int?]]) -> Bool
+    func isValidMove(column: Int, grid: [[Int?]]) -> Bool
+    func getNextRow(column: Int, grid: [[Int?]]) -> Int? 
+    
 }

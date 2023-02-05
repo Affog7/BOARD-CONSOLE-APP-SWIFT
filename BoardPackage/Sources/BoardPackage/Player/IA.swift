@@ -9,8 +9,8 @@ import Foundation
 class IA : Player {
     
     
-      init() {
-        super.init(type: TypePlayer.IA)
+    init(id : Int) {
+        super.init( id: id,type: TypePlayer.IA)
     }
     
     

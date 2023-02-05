@@ -10,9 +10,17 @@ class Inputer {
     
     
     
+    /// #HUMAIN
+    
     // Recupere et envoie la valeur rentrée par l'utilisateur pour un humain
     static func inputNumber() -> Int?{
         Outputer.printNumber()
+        return self.takeNumber()
+    }
+
+    // Recupere et envoie la valeur rentrée par l'utilisateur pour un humain avec le message : paramettre
+    static func inputNumber(_ message : String) -> Int?{
+        Outputer.printNumber(message)
         return self.takeNumber()
     }
     

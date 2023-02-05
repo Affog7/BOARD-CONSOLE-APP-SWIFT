@@ -8,9 +8,12 @@
 import Foundation
 import SwiftPackage
 
-print("Hello, World!")
+ 
 
-if var dfh = Board(withGrid: [[3,2],[2,nil],[2,2],[2,2]]) {
+var bd = Board(withGrid: [[3,2],[2,nil],[2,2],[2,2]])
+
+ 
+
     
-    print(dfh.description)
-}
+   // print(dfh.description)
+ 

@@ -12,6 +12,11 @@ class Outputer{
     static func printNumber(){
         print("Entrez une valeur(id) entier : \n")
     }
+    
+    // Affiche le message destiné à l'utilisateur
+    static func printNumber(_ message : String){
+        print("\(message) \n")
+    }
      
     // Demander à choisir une colonne
     static func printChooseCulomn(){
