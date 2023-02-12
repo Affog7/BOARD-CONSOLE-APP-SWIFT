@@ -15,5 +15,5 @@ public protocol Rules {
     func isValid(row: Int, column: Int, grid: [[Int?]]) -> Bool
     func isValidMove(column: Int, grid: [[Int?]]) -> Bool
     func getNextRow(column: Int, grid: [[Int?]]) -> Int? 
-  //  func checkWin(board: [[Int?]]) -> Bool
+  
 }
