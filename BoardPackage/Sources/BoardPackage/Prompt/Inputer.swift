@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Inputer {
+public class Inputer {
     
     
     
@@ -18,6 +18,14 @@ class Inputer {
         return self.takeNumber()
     }
 
+    
+    // Recupere le nom
+    static func inputName() -> String?{
+       // Outputer.printNumber()
+        return self.takeString()
+    }
+    
+    
     // Recupere et envoie la valeur rentrée par l'utilisateur pour un humain avec le message : paramettre
     static func inputNumber(_ message : String) -> Int?{
         Outputer.printNumber(message)
@@ -55,6 +63,15 @@ class Inputer {
         let input = readLine()
         if let input = input, let number = Int(input) {
             return number
+        } else {
+            return nil
+        }
+    }
+    
+    private static func takeString()->String?{
+        let input = readLine()
+        if let input = input {
+            return input
         } else {
             return nil
         }

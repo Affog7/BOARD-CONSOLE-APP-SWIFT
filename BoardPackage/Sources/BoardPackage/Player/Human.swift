@@ -6,10 +6,10 @@
 //
 
 import Foundation
-class Human : Player {
+public class Human : Player {
     private var name : String
     
-    init(name : String, id : Int) {
+    public init(name : String, id : Int) {
          self.name = name
         super.init(id: id, type: TypePlayer.HUMAN)
     }
@@ -24,6 +24,10 @@ class Human : Player {
         Inputer.inputNumber()
     }
     
+    
+    public func getName() -> String{
+        return self.name;
+    }
     
     
     

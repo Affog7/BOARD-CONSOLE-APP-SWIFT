@@ -6,10 +6,10 @@
 //
 
 import Foundation
-class IA : Player {
+public class IA : Player {
     
     
-    init(id : Int) {
+  public  init(id : Int) {
         super.init( id: id,type: TypePlayer.IA)
     }
     

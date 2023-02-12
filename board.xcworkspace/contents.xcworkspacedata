@@ -2,9 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:BoardPackage">
+      location = "group:../BoardConsole/BoardConsole.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:ConsoleApp">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Packages">
+      <FileRef
+         location = "group:BoardPackage">
+      </FileRef>
+   </Group>
 </Workspace>

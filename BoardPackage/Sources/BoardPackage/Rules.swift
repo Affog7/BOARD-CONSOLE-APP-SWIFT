@@ -6,7 +6,7 @@
 //
 
 import Foundation
-protocol Rules {
+public protocol Rules {
     var nbreRow : Int { get }
     var nbreColumn : Int {get} 
     mutating func isGameOver(_ grid: [[Int?]]) -> Bool
@@ -15,5 +15,5 @@ protocol Rules {
     func isValid(row: Int, column: Int, grid: [[Int?]]) -> Bool
     func isValidMove(column: Int, grid: [[Int?]]) -> Bool
     func getNextRow(column: Int, grid: [[Int?]]) -> Int? 
-    
+  //  func checkWin(board: [[Int?]]) -> Bool
 }

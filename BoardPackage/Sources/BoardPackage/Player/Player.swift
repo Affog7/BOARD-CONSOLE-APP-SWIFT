@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Player {
+public class Player {
     // Propriété pour l'identifiant du joueur
     public var id : Int
     // Propriété pour le type de joueur (IA ou humain)
